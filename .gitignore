@@ -1,3 +1,5 @@
 .idea/
 art.db
 art-3rd.sql
+node_modules/
+.DS_Store

@@ -1,0 +1,26 @@
+{
+  "name": "database006",
+  "version": "1.0.0",
+  "description": "Atleast this time, i am not upoading a solution. This is an in class activity for CSC 350, which covers inserting/updating and deleting content from a NoSQL database or a SQL. - To be consistent, use the same styling for commit messages that was given in the Project.     - [Prefix] – [Short description of the change]       The following are the only possible options for [Prefix]:     - FEAT - For new features or major additions to the project.         - Example: `FEAT - Added contact form to the Contact page`     - FIX - For bug fixes, corrections, or revisions to the code.         - Example: `FIX - Corrected navigation bar alignment on mobile devices`     - STYLE - For stylistic changes such as formatting, CSS modifications, or minor visual updates.         - Example: `STYLE - Updated color scheme for better contrast`     - DOCS - For changes or additions to the documentation, including README files and comments in the code.         - Example: `DOCS - Added project description and setup instructions to README`     - SECURITY - For changes related to improving the security of the website.         - Example: `SECURITY - Implemented input validation for contact form`     - REFACTOR - For code refactoring that doesn’t change functionality but improves code quality or organization.         - Example: `REFACTOR - Organized CSS files and cleaned up redundant styles`     - TEST - For adding tests or making changes to the testing suite.         - Example: `TEST - Added validation tests for contact form input`",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManavSainani/Database006-Manav.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ManavSainani/Database006-Manav/issues"
+  },
+  "homepage": "https://github.com/ManavSainani/Database006-Manav#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  }
+}
