@@ -8,7 +8,6 @@ const heading = document.querySelector('#editor-heading');
 const previewImage = document.querySelector('#preview-image');
 const previewCaption = document.querySelector('#preview-caption');
 const saveMessage = document.querySelector('#save-message');
-const resetButton = document.querySelector('#reset-button');
 
 const fields = ['Title', 'YearOfWork', 'Medium', 'Description', 'Width', 'Height', 'Cost', 'MSRP'];
 const paintingsById = new Map();
@@ -108,13 +107,12 @@ async function loadPaintings() {
 
 search.addEventListener('input', () => renderList(search.value));
 
-form.addEventListener('reset', () => {
+form.addEventListener('reset', (event) => {
+  event.preventDefault();
   const original = JSON.parse(form.dataset.original || 'null');
   if (!original) return;
-  requestAnimationFrame(() => {
-    for (const field of fields) form.elements[field].value = original[field] ?? '';
-    saveMessage.textContent = '';
-  });
+  for (const field of fields) form.elements[field].value = original[field] ?? '';
+  saveMessage.textContent = '';
 });
 
 form.addEventListener('submit', async (event) => {
@@ -143,10 +141,6 @@ form.addEventListener('submit', async (event) => {
   } finally {
     submitButton.disabled = false;
   }
-});
-
-resetButton.addEventListener('click', () => {
-  requestAnimationFrame(() => renderList(search.value));
 });
 
 loadPaintings();
