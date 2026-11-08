@@ -27,6 +27,7 @@ function setImageFallback(image) {
 
 function selectPainting(painting) {
   selectedId = painting.PaintingID;
+  form.action = `/api/paintings/${painting.PaintingID}`;
   heading.textContent = painting.Title;
   previewCaption.textContent = `Record #${painting.PaintingID}`;
   previewImage.src = imageUrl(painting.ImageFileName);
@@ -126,7 +127,7 @@ form.addEventListener('submit', async (event) => {
   saveMessage.textContent = 'Saving…';
 
   try {
-    const response = await fetch(`/api/paintings/${selectedId}`, {
+    const response = await fetch(form.action, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
